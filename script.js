@@ -12,7 +12,7 @@ const recipes = [
     {
         title: "Caesar Salad",
         image: "https://cookieandkate.com/images/2021/05/caesar-salad-in-bowl.jpg",
-        recipe: "Ingredients: Romaine lettuce, croutons, Parmesan, Caesar dressing. Instructions: Toss ingredients together and serve."
+        recipe: "Ingredients: Ground beef, onions, carrots, peas, mashed potatoes, butter. Instructions: Cook beef with vegetables, layer in dish, top with mashed potatoes, and bake."
     },
     {
         title: "Beef Tacos",
@@ -69,37 +69,46 @@ const recipes = [
         image: "https://www.kitchensanctuary.com/wp-content/uploads/2019/09/Buffalo-Wings-square-FS-55.jpg",
         recipe: "Ingredients: Chicken wings, hot sauce, butter, garlic powder. Instructions: Fry wings, toss in hot sauce and butter mixture."
     },
-    // Added six more to complete the list
     {
         title: "Pad Thai",
-        image: "https://www.recipetineats.com/wp-content/uploads/2018/07/Chicken-Pad-Thai_0.jpg",
+        image: "https://www.onceuponachef.com/images/2016/03/pad-thai-760x939.jpg",
         recipe: "Ingredients: Rice noodles, chicken, shrimp, peanuts, egg, tamarind paste. Instructions: Stir fry noodles with sauce and toppings."
     },
     {
         title: "Eggplant Parmesan",
-        image: "https://www.simplyrecipes.com/thmb/SljdQbIdAAhHfL-yeD3p9lXoJbM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Eggplant-Parmesan-LEAD-9-d2de709425b34ccfb780941b8bfae2b0.jpg",
+        image: "https://i0.wp.com/smittenkitchen.com/wp-content/uploads/2023/09/simple-eggplant-parmesan-12-scaled.jpg?fit=1200%2C800&ssl=1",
         recipe: "Ingredients: Eggplant, marinara sauce, mozzarella, Parmesan. Instructions: Layer eggplant and cheese, bake until golden."
     },
     {
         title: "Ramen",
-        image: "https://cdn.pickledplum.com/wp-content/uploads/2019/08/Shoyu-Ramen.jpg",
+        image: "https://thecozycook.com/wp-content/uploads/2023/02/Homemade-Ramen-f.jpg",
         recipe: "Ingredients: Ramen noodles, soy sauce, pork, eggs, seaweed. Instructions: Prepare broth, cook noodles, and add toppings."
     },
     {
         title: "Falafel",
-        image: "https://cookieandkate.com/images/2018/07/best-falafel-recipe-1-768x1152.jpg",
+        image: "https://tastythriftytimely.com/wp-content/uploads/2023/06/Falafel-Pita-FEATURED.jpg",
         recipe: "Ingredients: Chickpeas, garlic, parsley, cumin, coriander. Instructions: Blend ingredients, form patties, and fry until golden."
     },
     {
         title: "Sushi Rolls",
-        image: "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_33/1731984/how-to-make-sushi-rolls-today-main-210818.jpg",
+        image: "https://cdn.pickuplimes.com/cache/a6/7d/a67d95e8044769cf96d551c0ad09f7f9.jpg",
         recipe: "Ingredients: Sushi rice, nori, fish, avocado, cucumber. Instructions: Roll sushi with ingredients and slice into pieces."
     },
     {
         title: "Cheesecake",
-        image: "https://www.biggerbolderbaking.com/wp-content/uploads/2018/09/IMG_7390-Cheesecake-500x500.jpg",
+        image: "https://theloopywhisk.com/wp-content/uploads/2021/05/White-Chocolate-Cheesecake_730px-featured.jpg",
         recipe: "Ingredients: Cream cheese, sugar, eggs, graham cracker crust. Instructions: Prepare filling, bake in crust, and chill."
-    }
+    },
+    {
+        title: "Shepherd's pie",
+        image: "https://schoolnightvegan.com/wp-content/uploads/2022/10/vegan-cottage-pie41.jpg",
+        recipe: "Ingredients: Cream cheese, sugar, eggs, graham cracker crust. Instructions: Prepare filling, bake in crust, and chill."
+    },
+    {
+        title: "Hummus",
+        image: "https://www.gimmesomeoven.com/wp-content/uploads/2019/02/Hummus-Recipe-9.jpg",
+        recipe: "Ingredients: Chickpeas, tahini, lemon juice, garlic, olive oil, salt. Instructions: Blend ingredients until smooth, drizzle with olive oil, and serve."
+    },
 ];
 function displayRecipes() {
     const recipeList = document.getElementById("recipe-list");
@@ -140,3 +149,33 @@ document.getElementById("search").addEventListener("input", (event) => {
 });
 
 displayRecipes();
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("hello world");
+    fetch("https://world.openfoodfacts.org/api/v0/product/737628064502.json")
+        .then(resp => resp.json())
+        .then((object) => {
+            console.log(object);
+            // Use the object here or manipulate DOM as needed
+        })
+        .catch(error => console.log("Error fetching OpenFoodFacts data: ", error));
+
+    // Second fetch request
+    const configObj = {
+        method: "POST", // Set the method to POST
+        headers: {
+            "Content-Type": "application/json", // Proper case
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            // Provide data that you want to send to the local server
+            someData: "example data"
+        })
+    };
+
+    fetch("http://localhost:3000/", configObj)
+        .then((resp) => resp.json())
+        .then((object) => console.log(object))
+        .catch(error => console.log("Error posting data to local server: ", error));
+});
+
