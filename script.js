@@ -150,32 +150,9 @@ document.getElementById("search").addEventListener("input", (event) => {
 
 displayRecipes();
 
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("hello world");
-    fetch("https://world.openfoodfacts.org/api/v0/product/737628064502.json")
-        .then(resp => resp.json())
-        .then((object) => {
-            console.log(object);
-            // Use the object here or manipulate DOM as needed
-        })
-        .catch(error => console.log("Error fetching OpenFoodFacts data: ", error));
-
-    // Second fetch request
-    const configObj = {
-        method: "POST", // Set the method to POST
-        headers: {
-            "Content-Type": "application/json", // Proper case
-            "Accept": "application/json"
-        },
-        body: JSON.stringify({
-            // Provide data that you want to send to the local server
-            someData: "example data"
-        })
-    };
-
-    fetch("http://localhost:3000/", configObj)
-        .then((resp) => resp.json())
-        .then((object) => console.log(object))
-        .catch(error => console.log("Error posting data to local server: ", error));
-});
+fetch('http://localhost:3000/recipes')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    });
 
