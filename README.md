@@ -7,3 +7,12 @@ an easy to use cook book with simple recipes and instructions to help you prepar
 1. type in a specific dish of your own liking.
 2. follow the ingredients and instructions listed on the recipe's tile.
 3. enjoy your home made dish.
+
+# AUTHOR 
+Yusuf Abdul
+
+# Live Address
+https://github.com/yusufabdul1/project.git
+
+# Copyright!
+copyright Yusuf Abdul, all rights reserved
