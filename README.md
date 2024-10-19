@@ -15,4 +15,4 @@ Yusuf Abdul
 https://github.com/yusufabdul1/project.git
 
 # Copyright!
-copyright Yusuf Abdul, all rights reserved
+copyright Yusuf Abdul, all rights reserved. No plagirising!
