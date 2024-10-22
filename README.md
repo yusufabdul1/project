@@ -19,6 +19,8 @@ git clone https://github.com/yusufabdul1/project.git
 cd project
 
 3. Install the dependencies:
+npm Install
+
 
 # AUTHOR 
 Yusuf Abdul
