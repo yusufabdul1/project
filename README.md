@@ -21,6 +21,10 @@ cd project
 3. Install the dependencies:
 npm Install
 
+4. Start the server:
+npm test
+
+5. Open your browser and go to http://localhost:3000 to see the app.
 
 # AUTHOR 
 Yusuf Abdul
