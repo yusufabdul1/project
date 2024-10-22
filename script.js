@@ -161,7 +161,6 @@ window.addEventListener("load", () => {
     console.log("Page fully loaded!");
 });
 
-displayRecipes();
 
 
 fetch('http://localhost:3000/recipes')
