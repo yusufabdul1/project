@@ -8,6 +8,11 @@ An easy-to-use cookbook with simple recipes and instructions to help you prepare
 2. Follow the ingredients and instructions listed on the recipe's tile..
 3. Enjoy your homemade dish!
 
+# Setup Instructions
+
+To run this project locally, follow these steps:
+1. 
+
 # AUTHOR 
 Yusuf Abdul
 
