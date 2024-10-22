@@ -110,49 +110,62 @@ const recipes = [
         recipe: "Ingredients: Chickpeas, tahini, lemon juice, garlic, olive oil, salt. Instructions: Blend ingredients until smooth, drizzle with olive oil, and serve."
     },
 ];
-function displayRecipes() {
-    const recipeList = document.getElementById("recipe-list");
-    recipeList.innerHTML = '';
 
-    recipes.forEach(recipe => {
+// Function to display recipes
+function displayRecipes(recipesToDisplay) {
+    const recipeList = document.getElementById("recipe-list");
+    recipeList.innerHTML = ''; // Clear any existing recipes
+
+    recipesToDisplay.forEach(recipe => {
         const card = document.createElement('div');
         card.className = 'bg-white rounded-lg shadow-md overflow-hidden';
         card.innerHTML = `
-            <img src="${recipe.image}" alt="${recipe.title}" class="w-full h-40 object-cover">
+            <img src="${recipe.image}" alt="${recipe.title}" class="w-full h-40 object-cover recipe-image">
             <div class="p-4">
                 <h2 class="text-lg font-semibold">${recipe.title}</h2>
                 <p class="text-gray-600">${recipe.recipe}</p>
             </div>
         `;
         recipeList.appendChild(card);
+    });
+
+    const images = document.querySelectorAll(".recipe-image");
+    images.forEach(image => {
+        image.addEventListener("mouseover", () => {
+            image.classList.add("hover:shadow-lg", "transform", "scale-105");
+        });
+        image.addEventListener("mouseout", () => {
+            image.classList.remove("hover:shadow-lg", "transform", "scale-105");
+        });
     });
 }
 
+// Initial load of recipes
+displayRecipes(recipes);
+
+// Search functionality
 document.getElementById("search").addEventListener("input", (event) => {
     const searchTerm = event.target.value.toLowerCase();
     const filteredRecipes = recipes.filter(recipe => recipe.title.toLowerCase().includes(searchTerm));
-    const recipeList = document.getElementById("recipe-list");
-    recipeList.innerHTML = '';
+    displayRecipes(filteredRecipes);
+});
 
-    filteredRecipes.forEach(recipe => {
-        const card = document.createElement('div');
-        card.className = 'bg-white rounded-lg shadow-md overflow-hidden';
-        card.innerHTML = `
-            <img src="${recipe.image}" alt="${recipe.title}" class="w-full h-40 object-cover">
-            <div class="p-4">
-                <h2 class="text-lg font-semibold">${recipe.title}</h2>
-                <p class="text-gray-600">${recipe.recipe}</p>
-            </div>
-        `;
-        recipeList.appendChild(card);
-    });
+// Clear search functionality
+document.getElementById("clear-btn").addEventListener("click", () => {
+    document.getElementById("search").value = '';
+    displayRecipes(recipes);
+});
+
+
+window.addEventListener("load", () => {
+    console.log("Page fully loaded!");
 });
 
 displayRecipes();
+
 
 fetch('http://localhost:3000/recipes')
     .then(response => response.json())
     .then(data => {
         console.log(data);
     });
-
