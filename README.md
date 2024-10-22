@@ -18,7 +18,7 @@ git clone https://github.com/yusufabdul1/project.git
 2. Navigate to the project directory:
 cd project
 
-3. 
+3. Install the dependencies:
 
 # AUTHOR 
 Yusuf Abdul
