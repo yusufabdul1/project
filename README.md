@@ -6,7 +6,7 @@ An easy-to-use cookbook with simple recipes and instructions to help you prepare
 
 1. Search for a specific dish using the search bar.
 2. Follow the ingredients and instructions listed on the recipe's tile..
-3. enjoy your home made dish.
+3. Enjoy your homemade dish!
 
 # AUTHOR 
 Yusuf Abdul
