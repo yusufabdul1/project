@@ -5,7 +5,7 @@ An easy-to-use cookbook with simple recipes and instructions to help you prepare
 # How to use
 
 1. Search for a specific dish using the search bar.
-2. follow the ingredients and instructions listed on the recipe's tile.
+2. Follow the ingredients and instructions listed on the recipe's tile..
 3. enjoy your home made dish.
 
 # AUTHOR 
