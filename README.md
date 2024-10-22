@@ -15,6 +15,8 @@ To run this project locally, follow these steps:
 git clone https://github.com/yusufabdul1/project.git
 
 2. Navigate to the project directory:
+cd project
+
 
 # AUTHOR 
 Yusuf Abdul
