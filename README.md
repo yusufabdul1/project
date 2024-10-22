@@ -11,7 +11,7 @@ An easy-to-use cookbook with simple recipes and instructions to help you prepare
 # Setup Instructions
 
 To run this project locally, follow these steps:
-1. 
+1. Clone the repository:
 
 # AUTHOR 
 Yusuf Abdul
